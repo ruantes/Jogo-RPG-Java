@@ -9,6 +9,7 @@ public class Heroi {
     public int nivel;
     public int experiencia;
     public int ouro;
+    public int dano;
     public Inventario inventario;
     public Arma bonusAtaque;
 
@@ -21,5 +22,13 @@ public class Heroi {
             return ataque;
         }
         return ataque + inventario.armaEquipada.bonusAtaque;
+    }
+
+    public int calcularDano(int defesaInimigo){
+        dano = ataque - defesaInimigo;
+        if(dano < 1){
+            return dano = 1;
+        }
+        return dano;
     }
 }
